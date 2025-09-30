@@ -8,7 +8,7 @@ export default function Main() {
 
   const ingredientList = ingredients.map((food) => <li key={food}>{food}</li>);
 
-  const handleSubmit = function (formData) {
+  const addIngredient = function (formData) {
     const newIngredient = formData.get("ingredient");
     setIngredients(prevIng => [...prevIng, newIngredient])
     
@@ -16,7 +16,7 @@ export default function Main() {
 
   return (
     <main>
-      <form action={handleSubmit} className="add-ingredient-form">
+      <form action={addIngredient}  className="add-ingredient-form">
         <input
           aria-label="Add ingredient"
           type="text"
