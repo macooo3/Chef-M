@@ -1,8 +1,13 @@
 import { useState } from "react";
 
 export default function Main() {
-  const [ingredients, setIngredients] = useState([]);
-  const [recipeShown, setRecipeShown] = useState(faflse);
+  const [ingredients, setIngredients] = useState([
+    "chicken",
+    "brocolli",
+    "cheese",
+    "peppers",
+  ]);
+  const [recipeShown, setRecipeShown] = useState(false);
 
   const ingredientList = ingredients.map((food) => <li key={food}>{food}</li>);
 
@@ -11,7 +16,7 @@ export default function Main() {
     setIngredients((prevIng) => [...prevIng, newIngredient]);
   };
 
-  const showRecipe = function () {
+  const toggleShowRecipe = function () {
     setRecipeShown((prevShow) => !prevShow);
   };
 
@@ -38,7 +43,7 @@ export default function Main() {
                 <h3>Ready for a recipe?</h3>
                 <p>Generate a recipe from your list of ingredients.</p>
               </div>
-              <button onClick={showRecipe}>Get a recipe</button>
+              <button onClick={toggleShowRecipe}>Get a recipe</button>
             </div>
           )}
         </section>
