@@ -73,6 +73,8 @@ export default function Main() {
             <li>Add the Bolognese sauce to the cooked pasta and toss to combine.</li>
             <li>Serve hot, garnished with additional fresh basil or grated Parmesan cheese if desired.</li>
         </ol>
+
+        
     </article>
 </section>
     </main>
