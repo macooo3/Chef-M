@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Static from "./StaticFront";
 
 export default function Main() {
   const [ingredients, setIngredients] = useState([
@@ -22,15 +23,7 @@ export default function Main() {
 
   return (
     <main>
-      <form action={addIngredient} className="add-ingredient-form">
-        <input
-          aria-label="Add ingredient"
-          type="text"
-          placeholder="e.g beef"
-          name="ingredient"
-        ></input>
-        <button>Add Ingredients</button>
-      </form>
+    <Static/>
       {ingredients.length > 0 && (
         <section>
           <h2>Ingredients on hand:</h2>
