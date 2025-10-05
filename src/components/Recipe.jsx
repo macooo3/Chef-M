@@ -1,5 +1,5 @@
-export default function RecipeInst() {
-    return  {recipeShown && (
+export default function RecipeInst({recipeShown}) {
+    return  recipeShown && (
         <section>
           <h2>Chef Claude Recommends:</h2>
           <article className="suggested-recipe-container" aria-live="polite">
@@ -61,5 +61,5 @@ export default function RecipeInst() {
             </ol>
           </article>
         </section>
-      )}
+      )
 }
