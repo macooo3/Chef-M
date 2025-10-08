@@ -7,7 +7,7 @@ export default function Main() {
   const [ingredients, setIngredients] = useState([]);
   const [recipeShown, setRecipeShown] = useState(false);
 
-  const ingredientList = ingredients.map((food) => <li key={food}>{food}</li>);
+
 
   const addIngredient = function (formData) {
     const newIngredient = formData.get("ingredient");
@@ -21,11 +21,12 @@ export default function Main() {
   return (
     <main>
       <Static addIngredient={addIngredient} />
-      <IngredientList
-        ingredients={ingredients.length}
-        ingredientList={ingredientList}
-        toggleRecipe={toggleShowRecipe}
-      />
+      {ingredients.length > 0 && (
+        <IngredientList
+          ingredients={ingredients}
+          toggleRecipe={toggleShowRecipe}
+        />
+      )}
       {recipeShown && <ClaudeRecipe />}
     </main>
   );

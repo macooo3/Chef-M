@@ -1,11 +1,15 @@
-export default function IngredientList({ingredients, ingredientList, toggleRecipe}) {
-     return  ingredients > 0 && (
+export default function IngredientList({ingredients, toggleRecipe}) {
+    const ingredientListItems = ingredients.map((food) => (
+    <li key={food}>{food}</li>
+  ));   
+  
+  return  ingredients.length > 0 && (
         <section>
           <h2>Ingredients on hand:</h2>
           <ul className="ingredients-list" aria-live="polite">
-            {ingredientList}
+            {ingredientListItems}
           </ul>
-          {ingredients > 3 && (
+          {ingredients.length > 3 && (
             <div className="get-recipe-container">
               <div>
                 <h3>Ready for a recipe?</h3>
