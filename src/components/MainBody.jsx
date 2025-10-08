@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Static from "./StaticFront";
-import RecipeInst from "./ClaudeRecipe";
+import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientList from "./IngredientList";
 
 export default function Main() {
@@ -21,8 +21,12 @@ export default function Main() {
   return (
     <main>
       <Static addIngredient={addIngredient} />
-      <IngredientList ingredients={ingredients.length} ingredientList={ingredientList} toggleRecipe={toggleShowRecipe}/>
-      <RecipeInst recipeShown={recipeShown} />
+      <IngredientList
+        ingredients={ingredients.length}
+        ingredientList={ingredientList}
+        toggleRecipe={toggleShowRecipe}
+      />
+      {recipeShown && <ClaudeRecipe />}
     </main>
   );
 }
