@@ -7,8 +7,6 @@ export default function Main() {
   const [ingredients, setIngredients] = useState([]);
   const [recipeShown, setRecipeShown] = useState(false);
 
-
-
   const addIngredient = function (formData) {
     const newIngredient = formData.get("ingredient");
     setIngredients((prevIng) => [...prevIng, newIngredient]);
@@ -24,7 +22,7 @@ export default function Main() {
       {ingredients.length > 0 && (
         <IngredientList
           ingredients={ingredients}
-          toggleRecipe={toggleShowRecipe}
+          toggleShowRecipe={toggleShowRecipe}
         />
       )}
       {recipeShown && <ClaudeRecipe />}
